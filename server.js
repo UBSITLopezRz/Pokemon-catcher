@@ -23,13 +23,21 @@ const Pokemon = mongoose.model('pokemon', new mongoose.Schema(
 ));
 app.get('/api/pokemon', async (req, res) => {
   const pokemon = await Pokemon.find();
-  res.send(pokemon);
-  console.log("Fetched All Pokemon!")
+  res.send(pokemon);console.log("Fetched All Pokemon!")
 });
-
 
 app.post('/api/pokemon', async (req, res) => {
   const pokemon = new Pokemon(req.body);
   await pokemon.save();
   res.send(pokemon); console.log("Added new pokemon:", pokemon);
 });
+
+app.delete('/api/pokemon/:id', async(req, res) => {
+  await Pokemon.findByIdAndDelete(req.params.id);
+  res.status(204).send; //205 means that we have successful deletion
+})
+
+app.put('/api/pokemon/:id', async(req, res) => {
+  const updatePokemon = await Pokemon.findByIdAndUpdate(req.params.id, req.body, {new: true});
+  res.send(updatePokemon);
+})

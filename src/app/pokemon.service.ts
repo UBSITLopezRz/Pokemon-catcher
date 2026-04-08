@@ -17,4 +17,13 @@ export class PokemonService {
   savePokemon(data : any){
     return this.http.post(this.apiUrl, data);
   }
+
+  deletePokemon(id: string){
+    return this.http.delete(`${this.apiUrl}/${id}`).subscribe(() => this.pokemonList.update(list => list.filter(p => p._id !== id))); 
+    //removing the item immediately from our local signal
+  }
+
+  updatePokemon(id: string, data: any){
+    return this.http.put(`${this.apiUrl}/${id}`, data);
+  }
 }
