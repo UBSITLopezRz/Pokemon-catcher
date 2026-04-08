@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #ffcb05;
+    color: #2a75bb;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+header {
+    background-color: #2a75bb;
+    color: white;
+    padding: 20px;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.pokemon-card {
+    background-color: white;
+    border: 3px solid #2a75bb;
+    border-radius: 15px;
+    width: 200px;
+    margin: 20px auto;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05);
+}
+
+
+.pokemon-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.pokemon-name {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+
+button {
+    background-color: #ff0000; 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #cc0000;
+}
